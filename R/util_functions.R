@@ -239,14 +239,13 @@ createWU_SingleDateURL <- function (station,
                         'ID=', station,
                         '&month=', m,
                         '&day=', d, 
-                        '&year=', y,
-                        '&format=1')    
+                        '&year=', y)    
   }
 
   #for airport codes
   if(station_type=="airportcode") {
     airp_url = 'https://www.wunderground.com/history/airport/'
-    coda = '/DailyHistory.html?format=1'    
+    coda = '/DailyHistory.html'    
 
     #If an airportLetterCode is not supplied, try with K
     #If it is, just use that code
@@ -371,14 +370,14 @@ createWU_Custom_URL <- function (station,
                         '&dayend=', de,
                         '&monthend=', me,
                         '&yearend=', ye,                                                
-                        '&graphspan=custom&format=1')
+                        '&graphspan=custom&')
   }
 
   #for airport codes
   if(station_type=="airportcode") {
     airp_url = 'https://www.wunderground.com/history/airport/'
     mid = '/CustomHistory.html?'
-    coda = '&req_city=NA&req_state=NA&req_statename=NA&format=1'
+    coda = '&req_city=NA&req_state=NA&req_statename=NA&'
 
     #If an airportLetterCode is not supplied, try with K
     #If it is 4 letters, just use the supplied 
